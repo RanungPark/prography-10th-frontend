@@ -9,7 +9,13 @@ export const colors = {
   darkGray: '#111113',
   darkGray80: '#1A1A1D',
   darkGray50: '#2A2A2C',
+  darkGray30: '#3A3A3E',
+  darkGray10: '#4A4A4F',
   lightGray: '#CCCCCC',
+  orange: '#FF682A',
+  yellow: '#FEB903',
+  blue: '#1133FF',
+  purple: '#B251FF',
 };
 
 export const theme = {
