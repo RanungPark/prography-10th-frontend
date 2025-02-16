@@ -39,4 +39,8 @@ export const SIZE: Record<Size, RuleSet<object>> = {
     font-size: 24px;
     font-weight: 600;
   `,
+  '3xl': css`
+    font-size: 32px;
+    font-weight: 600;
+  `,
 };
