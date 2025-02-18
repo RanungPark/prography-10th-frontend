@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  error?: string;
+  error?: boolean;
 }
 
 const Input = ({ error, ...props }: InputProps) => {
   return <InputStyled $error={error} {...props} />;
 };
 
-const InputStyled = styled.input<{ $error?: string }>`
+const InputStyled = styled.input<{ $error?: boolean }>`
   width: 100%;
   padding: 10px;
   border-radius: 8px;

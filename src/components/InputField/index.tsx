@@ -14,6 +14,7 @@ type InputType<T extends FieldValues> = {
   type?: HTMLInputTypeAttribute;
   placeholder?: string;
   option?: RegisterOptions;
+  onChange?: ((e: React.ChangeEvent<HTMLInputElement>) => void) | null;
 };
 
 interface InputFieldProps<T extends FieldValues> {
@@ -22,7 +23,7 @@ interface InputFieldProps<T extends FieldValues> {
 }
 
 const InputField = <T extends FieldValues>({
-  input: { id, type = 'text', placeholder, option },
+  input: { id, type = 'text', placeholder, option, onChange },
   children,
 }: InputFieldProps<T>) => {
   const {
@@ -52,8 +53,18 @@ const InputField = <T extends FieldValues>({
           id={id}
           type={type}
           placeholder={placeholder}
-          error={errorMessage}
-          {...register(id, { ...option })}
+          error={!!errors[id]}
+          {...register(id, {
+            ...option,
+            onChange: e => {
+              if (onChange) {
+                onChange(e);
+              }
+            },
+          })}
+          onKeyDown={e => {
+            if (e.key === 'Enter') e.preventDefault();
+          }}
         />
         {errorMessage && (
           <Text size="sm" variant="error">
