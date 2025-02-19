@@ -1,16 +1,18 @@
 import Button from '@/components/Button';
 import Text from '@/components/Text';
+import { useStep } from '@/contexts/StepContext';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Submit = () => {
+  const { step } = useStep();
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate('/');
   };
 
-  return (
+  return step > 3 ? (
     <SubmitStyled>
       <Check>✓</Check>
       <Text as="h1" size="3xl">
@@ -28,7 +30,7 @@ const Submit = () => {
         홈으로 돌아가기
       </Button>
     </SubmitStyled>
-  );
+  ) : null;
 };
 
 const SubmitStyled = styled.div`

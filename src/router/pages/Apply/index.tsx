@@ -3,6 +3,7 @@ import Form from './Forms';
 import Indicator from './Indicator';
 import styled from 'styled-components';
 import Text from '@/components/Text';
+import Submit from './Forms/Submit';
 
 const Apply = () => {
   return (
@@ -17,6 +18,7 @@ const Apply = () => {
       <StepProvider>
         <Indicator />
         <Form />
+        <Submit />
       </StepProvider>
     </ApplyLayout>
   );
