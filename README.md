@@ -1,11 +1,14 @@
 # 프로그라피 10th FE 사전 과제 요구사항
 
+## [🖥️ 배포된 사이트](https://prography.netlify.app/)
+
 ## 📌 필수 요구사항 (구현 스팩)
 
 1️⃣ **리크루팅 진행 단계를 표시합니다.**
 
 - 지원자의 진행 상황을 직관적으로 확인할 수 있어야 합니다.
 - 참고 이미지
+
   <img width="727" alt="Image" src="https://github.com/user-attachments/assets/3249213d-41e1-4ae9-8cc2-5c183bf859de" />
 
 2️⃣ **제출하기 버튼을 누르기 전까지 리크루팅 폼 데이터가 유지되어야 합니다.**
@@ -22,12 +25,14 @@
 
 - 사용자가 어떤 항목을 입력해야 하는지 명확하게 안내해야 합니다.
 - 참고 이미지
+
   <img width="683" alt="Image" src="https://github.com/user-attachments/assets/52ec9362-8b6e-423e-be31-1b4085c9fea0" />
 
 5️⃣ **특정 항목에 대한 예시 데이터를 표시해야 합니다.**
 
 - 사용자가 올바르게 입력할 수 있도록 가이드 역할을 하는 예시 데이터를 제공합니다.(placeholder)
 - 참고 이미지
+
   <img width="648" alt="Image" src="https://github.com/user-attachments/assets/674e53a6-2025-4c07-8692-300fdbf38d95" />
 
 6️⃣ **API 통신을 위한 리크루팅 폼 데이터를 구성해야 합니다.**
@@ -41,21 +46,32 @@
 
   - 사용자가 `apply` 페이지를 벗어나려 하면 **"현재 페이지가 저장이 되지 않았습니다."** 모달이 표시되어, 실수로 나가는 것을 방지해야 합니다.
   - 참고 이미지
+
     <img width="588" alt="Image" src="https://github.com/user-attachments/assets/ab11ba79-3233-4d6e-b93e-e5da729a55f0" />
 
 - **로컬 스토리지를 이용한 자동 저장 기능**
 
   - 리크루팅 폼 데이터를 localStorage에 **자동 저장**하여, 사용자가 페이지를 새로고침하거나 다시 방문해도 데이터를 복구할 수 있어야 합니다.
   - loaclStorage 이미지
+
     <img width="805" alt="Image" src="https://github.com/user-attachments/assets/951f1a93-49e2-452a-a066-28997d3bb5df" />
 
 - **이전 작성 내용 불러오기 기능**
+
   - 사용자가 다시 `apply` 페이지에 방문하면 **"이전에 저장된 폼 데이터가 있습니다. 불러오시겠습니까?"** 모달을 띄워 선택할 수 있도록 합니다.
   - 참고 이미지
+
     <img width="671" alt="Image" src="https://github.com/user-attachments/assets/1c141787-618a-49ae-9f4b-6806f5394368" />
+
+- **전화번호 입력시 하이픈 자동 추가**
+  - 사용자가 전화번호 입력필드에서 숫자만 입력이 가능하며, 숫자를 입력시에 자동으로 하이픈이 추가되도록 작성
 
 ## 🚀 Getting Started
 
 ```bash
 $ yarn dev
 ```
+
+## 참고 실행 동영상
+
+[참고 실행 동영상](https://github.com/user-attachments/assets/06637107-0026-401b-9017-8c9aa83fd4f7)
