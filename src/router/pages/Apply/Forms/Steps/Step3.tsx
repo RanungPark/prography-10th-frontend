@@ -11,7 +11,8 @@ interface Step3Props {
 }
 
 const Step3 = ({ onPrev, onNext }: Step3Props) => {
-  const { trigger, getValues } = useFormContext<FormDataType>();
+  // const { trigger, getValues } = useFormContext<FormDataType>();
+  const { trigger } = useFormContext<FormDataType>();
 
   const handlePrev = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
