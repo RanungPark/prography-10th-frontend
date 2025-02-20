@@ -11,7 +11,7 @@ interface Step3Props {
 }
 
 const Step3 = ({ onPrev, onNext }: Step3Props) => {
-  const { trigger } = useFormContext<FormDataType>();
+  const { trigger, getValues } = useFormContext<FormDataType>();
 
   const handlePrev = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -21,7 +21,20 @@ const Step3 = ({ onPrev, onNext }: Step3Props) => {
   const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const isValid = await trigger('position');
-    if (isValid) onNext();
+    if (!isValid) return;
+
+    // API통신을 위한 리쿠르팅 폼 데이터
+    // const formValues = getValues();
+
+    // fetch('API 통신을 하고싶은 주소', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(formValues),
+    // });
+
+    onNext();
   };
 
   return (
