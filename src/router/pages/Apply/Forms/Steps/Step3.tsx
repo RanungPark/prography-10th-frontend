@@ -4,19 +4,16 @@ import Buttons from '../components/Buttons';
 import styled from 'styled-components';
 import { FormDataType } from '..';
 import RadioForm from '../../../../../components/RadioForm';
+import { useStep } from '@/contexts/StepContext';
 
-interface Step3Props {
-  onPrev: () => void;
-  onNext: () => void;
-}
-
-const Step3 = ({ onPrev, onNext }: Step3Props) => {
+const Step3 = () => {
   // const { trigger, getValues } = useFormContext<FormDataType>();
   const { trigger } = useFormContext<FormDataType>();
+  const { nextStep, prevStep } = useStep();
 
   const handlePrev = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    onPrev();
+    prevStep();
   };
 
   const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -35,7 +32,7 @@ const Step3 = ({ onPrev, onNext }: Step3Props) => {
     //   body: JSON.stringify(formValues),
     // });
 
-    onNext();
+    nextStep();
   };
 
   return (

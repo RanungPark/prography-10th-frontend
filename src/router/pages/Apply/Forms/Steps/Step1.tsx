@@ -6,13 +6,11 @@ import { useNavigate } from 'react-router-dom';
 import RadioForm from '../../../../../components/RadioForm';
 import { FormDataType } from '..';
 import AgreeNote from '../components/AgreeNote';
+import { useStep } from '@/contexts/StepContext';
 
-interface Step1Props {
-  onNext: () => void;
-}
-
-const Step1 = ({ onNext }: Step1Props) => {
+const Step1 = () => {
   const { getValues, trigger, setError } = useFormContext<FormDataType>();
+  const { nextStep } = useStep();
   const navigate = useNavigate();
 
   const handlePrevToHome = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -32,7 +30,7 @@ const Step1 = ({ onNext }: Step1Props) => {
       return;
     }
 
-    onNext();
+    nextStep();
   };
 
   return (

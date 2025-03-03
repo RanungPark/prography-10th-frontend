@@ -5,24 +5,21 @@ import styled from 'styled-components';
 import { FormDataType } from '..';
 import Title from '../components/Title';
 import Buttons from '../components/Buttons';
+import { useStep } from '@/contexts/StepContext';
 
-interface Step2Props {
-  onPrev: () => void;
-  onNext: () => void;
-}
-
-const Step2 = ({ onPrev, onNext }: Step2Props) => {
+const Step2 = () => {
   const { trigger, setValue } = useFormContext<FormDataType>();
+  const { nextStep, prevStep } = useStep();
 
   const handlePrev = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    onPrev();
+    prevStep();
   };
 
   const handleNext = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const isValid = await trigger(['name', 'email', 'phoneNum']);
-    if (isValid) onNext();
+    if (isValid) nextStep();
   };
 
   const handlePhoneNumChange = (e: React.ChangeEvent<HTMLInputElement>) => {

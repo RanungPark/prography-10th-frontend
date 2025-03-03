@@ -19,7 +19,7 @@ const defaultValues: FormDataType = {
 };
 
 const Form = () => {
-  const { step, nextStep, prevStep } = useStep();
+  const { step } = useStep();
   const { showModal, handleConfirm, handleCancel } = usePageLeaveModal(
     step <= 3
   );
@@ -30,9 +30,9 @@ const Form = () => {
     <>
       <FormProvider {...methods}>
         <form>
-          {step === 1 && <Step1 onNext={nextStep} />}
-          {step === 2 && <Step2 onPrev={prevStep} onNext={nextStep} />}
-          {step === 3 && <Step3 onPrev={prevStep} onNext={nextStep} />}
+          {step === 1 && <Step1 />}
+          {step === 2 && <Step2 />}
+          {step === 3 && <Step3 />}
         </form>
       </FormProvider>
 
